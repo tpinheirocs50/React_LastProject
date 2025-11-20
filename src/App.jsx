@@ -18,7 +18,7 @@ import ComponentsList from './pages/ComponentsList'
 import Signup from './pages/Signup'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import RootLayout from './layouts/rootLayout'
+import RootLayout from './layouts/RootLayout'
 
 // Sem usar layouts
 // const router = createBrowserRouter([
