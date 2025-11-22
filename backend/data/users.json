@@ -1,26 +1,18 @@
 [
   {
-    "email": "tiago@email.com",
-    "password": "asd",
-    "firstName": "Tiago",
-    "lastName": "Pinheiro",
-    "role": "employee",
-    "termsAccepted": true
-  },
-  {
     "email": "teste@teste.teste",
-    "password": "asd",
+    "password": "123",
     "firstName": "Tiago",
     "lastName": "Pinheiro",
     "role": "student",
     "termsAccepted": true
   },
   {
-    "email": "teste@teste.teste",
-    "password": "asd",
+    "email": "teste@teste.teste2",
+    "password": "123",
     "firstName": "Tiago",
     "lastName": "Pinheiro",
-    "role": "student",
+    "role": "teacher",
     "termsAccepted": true
   }
 ]

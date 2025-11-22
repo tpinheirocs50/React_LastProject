@@ -1,4 +1,6 @@
 import './App.css'
+import { AuthProvider } from './contexts/AuthContext'
+import { AuthContext } from './contexts/AuthContext'
 
 // pages
 import Homepage from './pages/Homepage'
@@ -18,7 +20,9 @@ import ComponentsList from './pages/ComponentsList'
 import Signup from './pages/Signup'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import RootLayout from './layouts/rootLayout'
+import RootLayout from './layouts/RootLayout'
+
+import RoutesForStudents from './studentsProtected/RoutesForStudents'
 
 // Sem usar layouts
 // const router = createBrowserRouter([
@@ -40,19 +44,23 @@ const router = createBrowserRouter([
       { path: '/loginpage', element: <LoginPage /> },
       { path: '/randompage', element: <RandomPage /> },
       { path: '/otherpage', element: <OtherPage /> },
-      { path: '/coursespage', element: <CoursesPage /> },
+      { path: '/coursespage', element: <RoutesForStudents element={<CoursesPage />}/> },
       { path: '/course/:course_name', element: <Course /> }, // o :course_name absorve o nome que passamos em /CoursesPage/<este_nome>
       { path: '/componentslist', element: <ComponentsList /> },
-      { path: '/availableplaces', element: <AvailablePlaces />},
-      { path: '/starwarspeople', element: <StarWarsPeople />},
-      { path: '/starwarsmovies', element: <StarWarsMovies />},
-      { path: '/signup', element: <Signup />},
+      { path: '/availableplaces', element: <AvailablePlaces /> },
+      { path: '/starwarspeople', element: <StarWarsPeople /> },
+      { path: '/starwarsmovies', element: <StarWarsMovies /> },
+      { path: '/signup', element: <Signup /> },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App
